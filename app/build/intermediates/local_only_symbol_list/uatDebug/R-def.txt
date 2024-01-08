@@ -1,0 +1,36 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+drawable ic_add
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+font inter
+font inter_bold
+id btnAddTask
+id clTask
+id edtAddTask
+id edtAddTaskDesc
+id fabAddTask
+id rvTasks
+id toolbar
+id txtNoTasks
+id txtTaskSubTitle
+id txtTaskTitle
+id txtTitle
+layout activity_tasks
+layout custom_loading_dialog
+layout custom_toolbar
+layout dialog_add_task
+layout task_item
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style MyTheme
+xml backup_rules
+xml data_extraction_rules

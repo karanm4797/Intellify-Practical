@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.intellify.taskmanagementapp-mergeUatDebugResources-79:/layout/dialog_add_task.xml",
+        "source": "com.intellify.taskmanagementapp-main-82:/layout/dialog_add_task.xml"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-mergeUatDebugResources-79:/layout/custom_toolbar.xml",
+        "source": "com.intellify.taskmanagementapp-main-82:/layout/custom_toolbar.xml"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-mergeUatDebugResources-79:/layout/task_item.xml",
+        "source": "com.intellify.taskmanagementapp-main-82:/layout/task_item.xml"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-mergeUatDebugResources-79:/layout/activity_tasks.xml",
+        "source": "com.intellify.taskmanagementapp-main-82:/layout/activity_tasks.xml"
+    }
+]

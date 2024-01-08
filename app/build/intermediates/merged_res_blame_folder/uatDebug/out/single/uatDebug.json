@@ -1,0 +1,98 @@
+[
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/layout_task_item.xml.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/layout/task_item.xml"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/xml_backup_rules.xml.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/layout_custom_toolbar.xml.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/layout/custom_toolbar.xml"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/xml_data_extraction_rules.xml.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/layout_custom_loading_dialog.xml.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/layout/custom_loading_dialog.xml"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/font_inter_bold.ttf.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/font/inter_bold.ttf"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/layout_dialog_add_task.xml.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/layout/dialog_add_task.xml"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/layout_activity_tasks.xml.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/layout/activity_tasks.xml"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/drawable_ic_add.xml.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/drawable/ic_add.xml"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.intellify.taskmanagementapp-merged_res-80:/font_inter.ttf.flat",
+        "source": "com.intellify.taskmanagementapp-main-82:/font/inter.ttf"
+    }
+]
