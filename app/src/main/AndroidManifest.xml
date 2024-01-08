@@ -16,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/MyTheme"
         tools:targetApi="31">
+
         <activity
             android:name=".ui.activity.TasksAct"
             android:exported="true"
@@ -26,6 +27,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".data.service.SyncDataService"
+            android:foregroundServiceType="dataSync"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            tools:node="remove">
+        </provider>
     </application>
 
 </manifest>

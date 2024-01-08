@@ -23,5 +23,7 @@ data class Task(
     var updatedDate: String = "",
     @ColumnInfo(name = "task_details")
     @SerializedName("task_details")
-    var taskDetails: String = ""
+    var taskDetails: String = "",
+    @ColumnInfo(name = "is_synced")
+    var isSynced: Boolean = false
 ) : Serializable

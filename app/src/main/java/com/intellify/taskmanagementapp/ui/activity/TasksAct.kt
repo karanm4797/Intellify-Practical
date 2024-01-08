@@ -1,12 +1,15 @@
 package com.intellify.taskmanagementapp.ui.activity
 
+import android.content.Intent
 import android.view.View
 import androidx.activity.viewModels
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
 import com.intellify.taskmanagementapp.R
 import com.intellify.taskmanagementapp.data.local.entity.Task
 import com.intellify.taskmanagementapp.data.remote.ApiCallback
+import com.intellify.taskmanagementapp.data.service.SyncDataService
 import com.intellify.taskmanagementapp.databinding.ActivityTasksBinding
 import com.intellify.taskmanagementapp.ui.adapter.TasksRVAdapter
 import com.intellify.taskmanagementapp.ui.dialog.AddTaskDialog
@@ -101,11 +104,16 @@ class TasksAct : BaseAct<ActivityTasksBinding, TasksVM>(R.layout.activity_tasks)
 
                     is ApiCallback.OnSuccess -> {
                         if (isUpdate) {
-                            showSnackBar("Data updated successfully")
+                            showSnackBar("Data updated successfully and started syncing data with server")
                             val list = adapter.getList()
-                            list[list.indexOfFirst { it.taskId == task.taskId }] = it.data!!.task!!
+                            list[list.indexOfFirst { oldTask -> oldTask.taskId == task.taskId }] =
+                                it.data!!.task!!
                             showHideRecyclerView(list.size)
                             adapter.setTaskList(taskList = list)
+
+
+                            val serviceIntent = Intent(this, SyncDataService::class.java)
+                            ContextCompat.startForegroundService(this, serviceIntent)
                         } else {
                             showSnackBar("Data added successfully")
                             val list = adapter.getList().apply {

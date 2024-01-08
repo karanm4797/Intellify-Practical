@@ -41,13 +41,17 @@ class TaskRepository @Inject constructor(
     ) {
 
         try {
-            val response = apiCall.invoke()
+            if (Utils.isOnline(context)) {
+                val response = apiCall.invoke()
 
-            if (response.isSuccessful) {
-                flowCollector.emit(ApiCallback.OnSuccess(response.body()))
+                if (response.isSuccessful) {
+                    flowCollector.emit(ApiCallback.OnSuccess(response.body()))
+                } else {
+                    Log.e("API_ERROR", response.message())
+                    flowCollector.emit(ApiCallback.OnError(response.message()))
+                }
             } else {
-                Log.e("API_ERROR", response.message())
-                flowCollector.emit(ApiCallback.OnError(response.message()))
+                flowCollector.emit(ApiCallback.OnError("No internet available"))
             }
         } catch (e: java.lang.Exception) {
             flowCollector.emit(ApiCallback.OnError(e.message.toString()))
@@ -56,48 +60,55 @@ class TaskRepository @Inject constructor(
 
     suspend fun getTasks(): Flow<ApiCallback<ArrayList<Task>>> {
         return flow {
-            if (Utils.isOnline(context)) {
-                parseResponse(this) { apiServices.getTasks() }
-            } else {
-                emit(ApiCallback.OnSuccess(taskDao.getAll() as ArrayList<Task>))
-            }
+            emit(ApiCallback.OnSuccess(taskDao.getAll() as ArrayList<Task>))
+        }.flowOn(Dispatchers.IO)
+    }
+
+    suspend fun getTasksFromServer(): Flow<ApiCallback<ArrayList<Task>>> {
+        return flow {
+            parseResponse(this) { apiServices.getTasks() }
         }.flowOn(Dispatchers.IO)
     }
 
     suspend fun addTasks(task: TaskRes): Flow<ApiCallback<TaskRes>> {
         return flow {
-            if (Utils.isOnline(context)) {
-                parseResponse(this) {
+            taskDao.addTask(task.task!!)
+            emit(ApiCallback.OnSuccess(task))
+        }.flowOn(Dispatchers.IO)
+    }
 
-                    val mediaType: MediaType? = "application/json; charset=utf-8".toMediaTypeOrNull()
-                    val requestBody: RequestBody = JSONObject().apply {
-                        put("task_name", task.task!!.taskName)
-                        put("task_details", task.task!!.taskDetails)
-                    }.toString().toRequestBody(mediaType)
-                    apiServices.addTasks(requestBody)
-                }
-            } else {
-                taskDao.addTask(task.task!!)
-                emit(ApiCallback.OnSuccess(task))
+    suspend fun addTasksToServer(task: TaskRes): Flow<ApiCallback<TaskRes>> {
+        return flow {
+            parseResponse(this) {
+                val mediaType: MediaType? = "application/json; charset=utf-8".toMediaTypeOrNull()
+                val requestBody: RequestBody = JSONObject().apply {
+                    put("task_name", task.task!!.taskName)
+                    put("task_details", task.task!!.taskDetails)
+                }.toString().toRequestBody(mediaType)
+                apiServices.addTasks(requestBody)
             }
         }.flowOn(Dispatchers.IO)
     }
 
     suspend fun updateTasks(task: TaskRes): Flow<ApiCallback<TaskRes>> {
-        return flow<ApiCallback<TaskRes>> {
-            if (Utils.isOnline(context)) {
-                parseResponse(this) {
-                    val mediaType: MediaType? = "application/json; charset=utf-8".toMediaTypeOrNull()
-                    val requestBody: RequestBody = JSONObject().apply {
-                        put("task_id", task.task!!.taskId)
-                        put("task_name", task.task!!.taskName)
-                        put("task_details", task.task!!.taskDetails)
-                    }.toString().toRequestBody(mediaType)
-                    apiServices.addTasks(requestBody)
-                }
-            } else {
-                taskDao.updateTask(task.task!!)
-                emit(ApiCallback.OnSuccess(task))
+        return flow {
+
+            taskDao.updateTask(task.task!!)
+            emit(ApiCallback.OnSuccess(task))
+        }.flowOn(Dispatchers.IO)
+    }
+
+    suspend fun updateTasksToServer(task: TaskRes): Flow<ApiCallback<TaskRes>> {
+        return flow {
+            parseResponse(this) {
+                val mediaType: MediaType? =
+                    "application/json; charset=utf-8".toMediaTypeOrNull()
+                val requestBody: RequestBody = JSONObject().apply {
+                    put("task_id", task.task!!.taskId)
+                    put("task_name", task.task!!.taskName)
+                    put("task_details", task.task!!.taskDetails)
+                }.toString().toRequestBody(mediaType)
+                apiServices.addTasks(requestBody)
             }
         }.flowOn(Dispatchers.IO)
     }

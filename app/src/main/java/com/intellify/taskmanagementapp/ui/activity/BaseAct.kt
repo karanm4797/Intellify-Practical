@@ -59,7 +59,7 @@ abstract class BaseAct<binding : ViewDataBinding, VM : BaseVM>(@LayoutRes privat
         progress.hide()
     }
 
-    fun showSnackBar(message: String, color: Int = R.color.black) {
+    fun showSnackBar(message: String) {
 
         val viewGroup =
             (findViewById<View>(android.R.id.content) as ViewGroup).getChildAt(0) as ViewGroup
@@ -67,7 +67,7 @@ abstract class BaseAct<binding : ViewDataBinding, VM : BaseVM>(@LayoutRes privat
         val snackBarView = Snackbar.make(viewGroup.getChildAt(0), message, Snackbar.LENGTH_LONG)
             .setBackgroundTint(
                 resources.getColor(
-                    color, null
+                    R.color.teal_700, null
                 )
             )
         val layoutParams = snackBarView.view.layoutParams as FrameLayout.LayoutParams

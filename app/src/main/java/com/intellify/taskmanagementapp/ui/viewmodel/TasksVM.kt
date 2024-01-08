@@ -21,7 +21,7 @@ class TasksVM @Inject constructor(
 
         val liveData = MutableLiveData<ApiCallback<ArrayList<Task>>>()
         viewModelScope.launch {
-            taskRepository.getTasks().collect {
+            taskRepository.getTasksFromServer().collect {
                 liveData.postValue(it)
             }
         }
@@ -56,7 +56,7 @@ class TasksVM @Inject constructor(
 
         val liveData = MutableLiveData<ApiCallback<TaskRes>>()
         viewModelScope.launch {
-
+            task.isSynced = false
             taskRepository.updateTasks(TaskRes(task = task)).collect {
                 liveData.postValue(it)
             }
